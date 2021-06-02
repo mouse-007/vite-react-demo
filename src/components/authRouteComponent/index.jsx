@@ -34,7 +34,7 @@ function ProvideAuth({ children }) {
   </authContext.Provider>
 }
 
-function ProvideRoute({ children, nextPath, ...rest }) {
+function ProvideRoute({ children, nextPath, renderChildren, ...rest }) {
   const auth = useAuth();
   return (
     <Route

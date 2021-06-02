@@ -9,7 +9,7 @@ import Basic from '@/components/basic';
 
 /**
  * 公共route 
- * @param {*} param0 auth是否需要鉴权 basic 是否需要公共的组件 
+ * @param {*} param0 auth是否需要鉴权 basic 是否需要basic 
  * @returns 
  */
 function BasicRoute({ auth = true, basic: isBasic = false, children, ...rest }) {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAuth } from '@/components/authRouteComponent';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 function User(props) {
   const { loginInfo, siginout } = useAuth();
@@ -11,6 +12,10 @@ function User(props) {
     <div style={{ background: 'gray' }}>
       {props.children}
     </div>
+    <button onClick={() => props.dispatch({ type: 'common/add' })}>加{ props.current }</button>
+    <button onClick={() => props.dispatch({ type: 'common/addAction', payload: 555 })}>时间戳{ props.current }</button>
   </div>
 }
-export default withRouter(User)
+export default connect((state) => {
+  return { current: state.common.current }
+})(User)
